@@ -5,6 +5,7 @@ Central entry point for all microservices. Handles authentication (JWT) and prox
 ## Setup
 
 1. Copy `.env.example` to `.env` and update values:
+
    ```powershell
    cp .env.example .env
    ```
@@ -17,11 +18,13 @@ Central entry point for all microservices. Handles authentication (JWT) and prox
 ## Running
 
 Development mode (with auto-reload):
+
 ```powershell
 npm run dev
 ```
 
 Production mode:
+
 ```powershell
 npm start
 ```
@@ -35,6 +38,7 @@ npm start
 POST `http://localhost:3000/auth/login`
 
 Example credentials:
+
 - username: `admin`
 - password: `admin123`
 
@@ -48,6 +52,7 @@ Example credentials:
 GET `http://localhost:3000/health`
 
 All routes (except `/auth/login`) require JWT token in Authorization header:
+
 ```
 Authorization: Bearer <token>
 ```

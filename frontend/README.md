@@ -1,27 +1,76 @@
-# Frontend
+# E-Wallet Frontend
 
-Simple HTML + JavaScript dashboard for interacting with the API Gateway and microservices.
-
-## Running
-
-Open `index.html` in a web browser. No build step required.
+Modern React-based frontend for the E-Wallet Digital Payment Service.
 
 ## Features
 
-- Login with JWT authentication
-- Display available services and endpoints
-- Quick links to API endpoints
+- **User Authentication**: Login and registration with JWT
+- **Dashboard**: View balance and recent transactions
+- **Wallet Management**: Check balance and top up funds
+- **Transactions**: Send payments and view transaction history
+- **Responsive Design**: Works on desktop and mobile
 
-## Default Port
+## Tech Stack
 
-Open `file:///` in your browser and navigate to this directory, or serve with:
+- **React 18** - UI framework
+- **React Router 6** - Navigation
+- **Axios** - HTTP client
+- **Vite** - Build tool and dev server
 
-```bash
-# Using Python 3
-python -m http.server 8000
+## Setup
 
-# Using Node.js http-server
-npx http-server
-```
+1. **Install dependencies:**
 
-Then open `http://localhost:8000` (or your server port).
+   ```powershell
+   cd frontend
+   npm install
+   ```
+
+2. **Start development server:**
+
+   ```powershell
+   npm run dev
+   ```
+
+3. **Access the app:**
+   Open `http://localhost:5173` in your browser
+
+## Requirements
+
+Make sure the backend services are running:
+
+- API Gateway: `http://localhost:3000`
+- User Service: `http://localhost:3001`
+- Payment Service: `http://localhost:3002`
+
+## API Integration
+
+The frontend connects to the API Gateway at `http://localhost:3000` and uses the following endpoints:
+
+### Authentication
+
+- `POST /auth/login` - User login
+- `POST /auth/register` - User registration
+
+### Wallet
+
+- `GET /api/wallets/balance` - Get wallet balance
+- `POST /api/wallets/topup` - Top up wallet
+
+### Transactions
+
+- `GET /api/transactions/history` - Get transaction history
+- `POST /api/transactions/payment` - Send payment
+
+## Development
+
+- `npm run dev` - Start dev server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## Default Credentials
+
+- Username: `admin`
+- Password: `admin123`
+
+Or register a new account using the registration form.
